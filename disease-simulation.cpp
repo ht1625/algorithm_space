@@ -118,7 +118,7 @@ void controlb1(int set) {
 		htcontol();
 	}
 }
-//string values ​​of 4x5 incoming form are converted int and thrown into the location vector
+//string values of 4x5 incoming form are converted int and thrown into the location vector
 void turnloc1(string loca) {
 	int sayac2 = 0;
 	for (int m = 0; m < loca.size(); m++) {
