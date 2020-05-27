@@ -7,7 +7,7 @@ int func1(char c) {
 
 int main()
 {
-	vector<string>harfdizisi;
+	vector<string>charletter;
 	int numbers[250] = { 0 };
 	string input = "5ABCD1BCD1CDE";
 
@@ -15,42 +15,42 @@ int main()
 		numbers[i] = func1(input[i]);
 
 	}
-	bool çýkýþ = true;
-	int vektörboyutu = 0;
+	bool Ã§Ä±kÄ±ÅŸ = true;
+	int vectorsize = 0;
 
-	while (çýkýþ == true) {
+	while (Ã§Ä±kÄ±ÅŸ == true) {
 		for (int i = 0; i < 250 && input[i] != '\0'; i++) {
 			if (numbers[i] != -1) {
 				int temp = input[i];
 				temp = temp - 48;
-				vektörboyutu = vektörboyutu * 10 + temp;
+				vectorsize = vectorsize * 10 + temp;
 			}
 			else
 			{
-				çýkýþ = false;
+				Ã§Ä±kÄ±ÅŸ = false;
 				break;
 			}
 		}
 	}
 	bool b = false;
-	string vektörelemaný = "\0";
-	int harfboyutu = 0;
+	string vectorelement = "\0";
+	int charsize = 0;
 	int sayac = 0;
 
 	for (int i = 0; i < 250 && input[i] != '\0'; i++) {
 		if (numbers[i] == -1) {
-			harfboyutu++;
-			vektörelemaný = vektörelemaný + input[i];
+			charsize++;
+			vectorelement = vectorelement + input[i];
 			b = true;
 		}
 		else {
 			sayac++;
 		}
 		if ((sayac == 1 || i == size(input) - 1) && b == true) {
-			if (harfboyutu <= vektörboyutu) {
-				harfdizisi.push_back(vektörelemaný);
-				vektörelemaný = "\0";
-				harfboyutu = 0,
+			if (charsize <= vectorsize) {
+				charletter.push_back(vectorelement);
+				vectorelement = "\0";
+				charsize = 0,
 					b = false;
 			}
 			else  break;
@@ -58,21 +58,21 @@ int main()
 		sayac = 0;
 	}
 	int sayac1 = 1;
-	string harfkombinasyonu[128];
-	harfkombinasyonu[0] = harfdizisi[0][0];
-	cout << harfkombinasyonu[0] << endl;
+	string charcombination[128];
+	charcombination[0] = charletter[0][0];
+	cout << charcombination[0] << endl;
 
-	for (int i = 0; i < harfdizisi.size(); i++) {
+	for (int i = 0; i < charletter.size(); i++) {
 		int sayac2 = 0;
-		while (harfkombinasyonu[sayac2] != "\0") {
+		while (charcombination[sayac2] != "\0") {
 			sayac2++;
 		}
 		for (int j = 0; j < sayac2; j++) {
-			int temp = harfkombinasyonu[j].size() - 1;
-			if (harfkombinasyonu[j][temp] == harfdizisi[i][0]) {
-				for (int k = 1; k < harfdizisi[i].size(); k++) {
-					harfkombinasyonu[sayac1] = harfkombinasyonu[j] + harfdizisi[i][k];
-					cout << harfkombinasyonu[sayac1] << endl;
+			int temp = charcombination[j].size() - 1;
+			if (charcombination[j][temp] == charletter[i][0]) {
+				for (int k = 1; k < charletter[i].size(); k++) {
+					charcombination[sayac1] = charcombination[j] + charletter[i][k];
+					cout << charcombination[sayac1] << endl;
 					sayac1++;
 				}
 			}
