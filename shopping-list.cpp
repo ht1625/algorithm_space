@@ -1,17 +1,13 @@
-//HÜSNÝYE TANÞA
-//1306170039
-//BÝLGÝSAYAR MÜHENDÝSLÝÐÝ
-
 #include "pch.h"
 #include <iostream>
 #include <string>
 #include <vector>
 using namespace std;
 
-vector<vector<string>>listt; //Burda oluþturulan listeleri ve elemanlarý sýrasý ile alýyor ve bu string iki boyutlu vektöre atýyorum
-vector<vector<int>>productquantity;//Burada ise yukarýda oluþturulan vektörün ayný konumunda ürünün miktarýný da ekliyorum
+vector<vector<string>>listt; 
+vector<vector<int>>productquantity;
 
-void showlist(int numofelist) { // Bu fonksiyon ise vektörün  elemanlarýný ve miktarlarýný yazdýrmak için
+void showlist(int numofelist) { 
 	 if(listt.size()>=numofelist){
 		cout << "List " << numofelist << " --> ";
 		for (int j = 0; j < listt[numofelist-1].size(); j++) {
@@ -24,7 +20,7 @@ int main()
 {   
 	bool door = true;
 	cout << "Welcome to shopping list :)\n\nWe are starting...\n\n";
-	while (door) { // Kullanýcýya üç seçenek sundum, yeni bir liste oluþturabilir, istediði bir listeyi düzenleyebilir veya listeyi tamamen silebilir
+	while (door) { 
 		cout << "1-) Press 1 to create a new list!\n";
 		cout << "2-) Press 2 to organize the list!\n";
 		cout << "3-) Press 3 to delete the list!\n\n";
@@ -33,8 +29,7 @@ int main()
 		if (choice == 1) {
 			vector<string>temp1;
 			vector<int>temp2;
-			int listsize; // Listeyi oluþtur seçeneðini seçtiðinde kullanýcýdan önce kaç elemanlý bir liste oluþturacaðýný soruyor ve
-			// daha sonra kullanýcýdan girdiði sayý kadar ürün adý ve mikarýný alýp ilgili vektöre aktarýyorum
+			int listsize; 
 			cout << "How many products will be on your list ? \n";
 			cin >> listsize;
 			for (int i = 0; i < listsize; i++) {
@@ -52,8 +47,6 @@ int main()
 			for (int i = 0; i < listt.size(); i++) {
 				showlist(i+1);
 			}
-			//Kullanýcý 2'ye bastýðýnda ise önce hangi listeyi kullanmak istediðini soruyor ve ona göre de istediði listeye eleman ekleme, eleman silme
-			//ve eðer iþaretlemek isterse diyede bir seçenek sunuyorum
 			cout << "\nPress 1 to add item to list!\n";
 			cout << "Press 2 to delete item!\n";
 			cout << "Press 3 to mark as done undone!\n\n";
@@ -115,7 +108,7 @@ int main()
 			for (int i = 0; i < listt.size(); i++) {
 				showlist(i + 1);
 			}
-			int lisnum;//Seçenek 3 de ise önce listeleri gösteriyor ve silmek istediði listeyi soruyorum ona göre de vektörlerden istediði listeyi siliyorum
+			int lisnum;
 			cout << "\nEnter number of list what you want delete: ";
 			cin >> lisnum;
 			if (lisnum >= listt.size()) {
@@ -124,8 +117,7 @@ int main()
 			}
 		}
 		else cout << "\nYou should press 1, 2 or 3!\n" << endl;
-		string door1;//Ana menüye tekrar girmek isteyip istemediðini soruyorum
-		//Bu ana menüyü while içinde bir döngü halinde yazdým ve aþaðýdaki sorularýmla da döngüden çýkýp çýkmayacaðýný belirliyorum
+		string door1;	
 		cout << "\nFinished your process. If you come back to main menu, write yes or no !  \n";
 		cin >> door1;
 		if (door1 == "no") {
