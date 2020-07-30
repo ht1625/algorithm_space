@@ -1,113 +1,17 @@
-#include "pch.h"
-#include <iostream>
 #include <string>
 #include <vector>
-#include <fstream>
 #include <sstream>
-#include <conio.h>
 #include <locale.h>
 using namespace std;
 
-/*
-void diz(int examp[],int k) { // dizinin boyutunu  içine yazmana gerek yok , bu şekilde de çalışır
-	for (int i = 0; i <k; i++) {
-		cout << examp[i] << " ";
-	}
-}
-int main() {
-	int dizi[4] = { 85,96,14,23 };
-	diz(dizi,4);
-	return 0;
-} */
 
-
-
-/*
-int main() {
-	int x = 49;
-	int fit = static_cast<int>(x / 6);//bölümün ondalıklı kısmını alıyor virgülden sonrasını almıyor
-	cout << fit;
-	return 0;
-}*/
-
-
-
-/*
-struct  renk {
-	string tşörtrengi;
-	string kotrengi;
-};
-class daire {
-	int x, y;
-	renk dolgurengi;
-public:
-	daire(int s1, int s2, renk dr ) {
-		x = s1;
-		y = s2;
-		dolgurengi = dr;
-	}
-	void yaz();
-};
-void daire::yaz() {
-	cout << "toplamları:" << x + y << endl;
-	cout << "renkler:" << dolgurengi.kotrengi << " " << dolgurengi.tşörtrengi << endl;
-}
-int main() {
-	renk rengimiz;
-	rengimiz.kotrengi = "blue";
-	rengimiz.tşörtrengi = "red";
-	daire onedaire( 98, 56, rengimiz);
-	onedaire.yaz();
-	return 0;
-}*/
-
-
-
-/*
-class  renk {
-	string tşörtrengi;
-	string kotrengi;
-public:
-	//renk() {} ;
-	renk(string s1, string s2) :tşörtrengi(s1), kotrengi(s2) {}
-	void yazdır() {
-		cout << tşörtrengi << " " << kotrengi;
-	}
-};
-class daire {
-	int x;
-	string  y;
-	renk dolgurengi;
-public:
-    daire (int s1, string s2 ,renk y):x(s1) , y(s2) , dolgurengi(y) {} // bunu yukardaki classta boş construcyor olmadan da çalışıyor
-	daire(int s, string y1, renk k) {
-		x = s;
-		y = y1;
-		dolgurengi=k;
-	}
-	void yaz();
-};
-void daire::yaz() {
-	cout << "toplamları:" << x <<" "<< y << endl;
-	cout << "renkler:";
-	dolgurengi.yazdır();
-}
-int main() {
-	renk rengimiz("blue", "red");
-	daire onedaire(98, "rmflemfe", rengimiz);
-	onedaire.yaz();
-	return 0;
-}*/
-
-
-/*
-struct ürünözellkleri {
-	string ürünadı;
-	int ürünmiktarı;
-	bool üründurumu=false;
+struct Ã¼rÃ¼nÃ¶zellkleri {
+	string Ã¼rÃ¼nadÃ½;
+	int Ã¼rÃ¼nmiktarÃ½;
+	bool Ã¼rÃ¼ndurumu=false;
 };
 class cratelist {
-	vector<ürünözellkleri>ürünözell;
+	vector<Ã¼rÃ¼nÃ¶zellkleri>Ã¼rÃ¼nÃ¶zell;
 	public:
 	cratelist() {};
 	void addtoeleman();
@@ -116,13 +20,13 @@ class cratelist {
 	void showeleman();
 };
 vector<cratelist>Lists;
-void deletelist(int sıra) {
-	Lists.erase(Lists.begin() + sıra - 1);
+void deletelist(int sÃ½ra) {
+	Lists.erase(Lists.begin() + sÃ½ra - 1);
 }
 void cratelist::showeleman() {
-	for (int i = 0; i <ürünözell.size(); i++) {
-		cout << i + 1 << "-) " << ürünözell[i].ürünadı;
-		if (ürünözell[i].üründurumu == true) {
+	for (int i = 0; i <Ã¼rÃ¼nÃ¶zell.size(); i++) {
+		cout << i + 1 << "-) " << Ã¼rÃ¼nÃ¶zell[i].Ã¼rÃ¼nadÃ½;
+		if (Ã¼rÃ¼nÃ¶zell[i].Ã¼rÃ¼ndurumu == true) {
 			cout << "*    ";
 		}
 		else { cout << "    "; }
@@ -130,31 +34,31 @@ void cratelist::showeleman() {
 	cout << "\n";
 }
 void cratelist::addtoeleman() {
-	ürünözellkleri temp;
+	Ã¼rÃ¼nÃ¶zellkleri temp;
 	string boool;
-	cout << "\nÜrünün adını giriniz:";
-	cin >> temp.ürünadı;
-	cout << "Ürünün miktarını giriniz:";
-	cin >> temp.ürünmiktarı;
-	cout << "Ürünü işaretlemek için True yoksa False yazınız! ";
+	cout << "\nÃœrÃ¼nÃ¼n adÃ½nÃ½ giriniz:";
+	cin >> temp.Ã¼rÃ¼nadÃ½;
+	cout << "ÃœrÃ¼nÃ¼n miktarÃ½nÃ½ giriniz:";
+	cin >> temp.Ã¼rÃ¼nmiktarÃ½;
+	cout << "ÃœrÃ¼nÃ¼ iÃ¾aretlemek iÃ§in True yoksa False yazÃ½nÃ½z! ";
 	cin >>boool;
-	if (boool == "true" || boool=="True") { temp.üründurumu = true; }
-	ürünözell.push_back(temp);
+	if (boool == "true" || boool=="True") { temp.Ã¼rÃ¼ndurumu = true; }
+	Ã¼rÃ¼nÃ¶zell.push_back(temp);
 }
 void cratelist::deletetoeleman(int listnum) {
 	showeleman();
 	int secim;
-	cout << "\nSilmek istediğiniz ürünün sırasını giriniz:";
+	cout << "\nSilmek istediÃ°iniz Ã¼rÃ¼nÃ¼n sÃ½rasÃ½nÃ½ giriniz:";
 	cin >> secim;
-	ürünözell.erase(ürünözell.begin()+secim - 1);
-	if (ürünözell.size() == 0) { deletelist(listnum); }
+	Ã¼rÃ¼nÃ¶zell.erase(Ã¼rÃ¼nÃ¶zell.begin()+secim - 1);
+	if (Ã¼rÃ¼nÃ¶zell.size() == 0) { deletelist(listnum); }
 }
 void cratelist::makesembyol() {
 	showeleman();
 	int secim;
-	cout << "\nİşaretlemek istediğiniz ürünün sırasını giriniz:";
+	cout << "\nÃÃ¾aretlemek istediÃ°iniz Ã¼rÃ¼nÃ¼n sÃ½rasÃ½nÃ½ giriniz:";
 	cin >> secim;
-	ürünözell[secim - 1].üründurumu = true;
+	Ã¼rÃ¼nÃ¶zell[secim - 1].Ã¼rÃ¼ndurumu = true;
 }
 int main() {
 	setlocale(LC_ALL, "Turkish");
@@ -162,13 +66,13 @@ int main() {
 	int choose;
 	cout << "Welcome to shopping list! :))";
 	while (door) {
-		cout << "\n\nListe oluşturmak için 1'e basın!\n";
-		cout << "Liste silmek için 2'ye basınız!\n";
-		cout << "Liste üzerinde işlem yapmak için 3'e basınız!\n";
+		cout << "\n\nListe oluÃ¾turmak iÃ§in 1'e basÃ½n!\n";
+		cout << "Liste silmek iÃ§in 2'ye basÃ½nÃ½z!\n";
+		cout << "Liste Ã¼zerinde iÃ¾lem yapmak iÃ§in 3'e basÃ½nÃ½z!\n";
 		cin >> choose;
 		if (choose == 1) {
 			int sayac;
-			cout << "\nKaç ürün eklemek istersiniz:";
+			cout << "\nKaÃ§ Ã¼rÃ¼n eklemek istersiniz:";
 			cin >> sayac;
 			cratelist list1;
 			for (int i = 0; i < sayac; i++) {
@@ -180,17 +84,17 @@ int main() {
 		else if (choose == 2) {
 			for (int i = 0; i < Lists.size(); i++) { Lists[i].showeleman(); }
 			int sayac1;
-			cout << "\nSilmek istediğiniz listenin sırasını  giriniz:";
+			cout << "\nSilmek istediÃ°iniz listenin sÃ½rasÃ½nÃ½  giriniz:";
 			cin >> sayac1;
 			deletelist(sayac1);
 		}
 		else if (choose == 3) {
 			int listnum, elemannum;
-			cout << "\nİşlem yapmak istediğiniz listenin sırasını giriniz:";
+			cout << "\nÃÃ¾lem yapmak istediÃ°iniz listenin sÃ½rasÃ½nÃ½ giriniz:";
 			cin >> listnum;
-			cout << "\nEleman eklemek için 1'e basın!\n";
-			cout << "Eleman silmek için 2'ye basınız!\n";
-			cout << "Eleman işaretlemek istiyorsanız 3'e basınız!\n";
+			cout << "\nEleman eklemek iÃ§in 1'e basÃ½n!\n";
+			cout << "Eleman silmek iÃ§in 2'ye basÃ½nÃ½z!\n";
+			cout << "Eleman iÃ¾aretlemek istiyorsanÃ½z 3'e basÃ½nÃ½z!\n";
 			cin >> elemannum;
 			if (elemannum == 1) {
 				Lists[listnum - 1].addtoeleman();
@@ -203,45 +107,9 @@ int main() {
 			}
 		}
 		int df;
-		cout << "\n\nÇıkış yapmak istiyorsanız 1'e yoksa 2'ye basınız:";
+		cout << "\n\nÃ‡Ã½kÃ½Ã¾ yapmak istiyorsanÃ½z 1'e yoksa 2'ye basÃ½nÃ½z:";
 		cin >> df;
 		if (df == 1) { door = false; break; }
 	}
 	return 0;
-}*/
-
-
-/*
-struct lisnum {
-	int mik;
-	string name;
-	bool dor;
-};
-class d {	
-	vector<lisnum>list;
-public:
-	d() {};
-	void kl();
-};
-void d::kl() {
-	lisnum temp;
-	cout << "\neleman adı gir:";
-	cin >> temp.name;
-	cout << "\nürün mikt:";
-	cin >> temp.mik;
-	cout << "bool durumu.";
-	cin >> temp.dor;
-	list.push_back(temp);
 }
-int main() {
-	d listem;
-	bool fg;
-	for (int i = 0; i < 5; i++) {
-		//listem.kl();
-		cin >> fg;
-		cout << "kmded";
-	}
-	return 0;
-}*/
-
-
