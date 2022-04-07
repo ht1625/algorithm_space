@@ -22,14 +22,14 @@ vector<vector<string> >youcansit2;
 int main(){
 	
 int siz;
-	cin>>siz;
-	//aşağıda sandalye sırasına göre o sandalyeye oturabilecek kişileri 
-	//numarası ile vektöre koyuyoyuz
-	for(int i=0;i<siz;i++){
+	cin>>size;
+	//aÃ¾aÃ°Ã½da sandalye sÃ½rasÃ½na gÃ¶re o sandalyeye oturabilecek kiÃ¾ileri 
+	//numarasÃ½ ile vektÃ¶re koyuyoyuz
+	for(int i=0;i<size;i++){
 		temp1.push_back(getss(i+1));
 		if(i==0){
 			temp1.push_back(getss(i+2));
-			temp1.push_back(getss(siz));
+			temp1.push_back(getss(size));
 		}
 		else if(i==(siz-1)){
 			temp1.push_back(getss(i));
@@ -42,16 +42,16 @@ int siz;
 		canwesit.push_back(temp1);
 		temp1.clear();
 	}
-	//iki boyutlu bir vektöre ilk üç elemanını ilk sandalyeye oturabilecek 
-	//kişileri yerleştiriyoruz
+	//iki boyutlu bir vektÃ¶re ilk Ã¼Ã§ elemanÃ½nÃ½ ilk sandalyeye oturabilecek 
+	//kiÃ¾ileri yerleÃ¾tiriyoruz
 	for(int i=0;i<3;i++){
 		temp1.push_back(canwesit[0][i]);
 		youcansit.push_back(temp1);
 		temp1.clear();
 	}
-	//burada ise sırası ile diğer sandalyeye oturabilecek kişileri önceki vektörün herbirine 
-	//ekliyor ve tüm ihtimalleri yazmış oluyoruz
-	for(int i=1;i<siz;i++){
+	//burada ise sÃ½rasÃ½ ile diÃ°er sandalyeye oturabilecek kiÃ¾ileri Ã¶nceki vektÃ¶rÃ¼n herbirine 
+	//ekliyor ve tÃ¼m ihtimalleri yazmÃ½Ã¾ oluyoruz
+	for(int i=1;i<size;i++){
 		for(int j=0;j<3;j++){
 			for(int k=0;k<youcansit.size();k++){
 				bool door=true;
